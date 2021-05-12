@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?><wsdl:definitions name="BoxOfficeAPIServiceImplService" targetNamespace="http://service.boxoffice.server.apiservice.kobisopenapi/" xmlns:ns1="http://www.kobis.or.kr/kobisopenapi" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.boxoffice.server.apiservice.kobisopenapi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://www.kobis.or.kr:80/kobisopenapi/webservice/soap/boxoffice?wsdl=BoxOfficeAPIService.wsdl" namespace="http://www.kobis.or.kr/kobisopenapi">
+    </wsdl:import>
+  <wsdl:binding name="BoxOfficeAPIServiceImplServiceSoapBinding" type="ns1:BoxOfficeAPIService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="searchWeeklyBoxOfficeList">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="searchWeeklyBoxOfficeList">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="searchWeeklyBoxOfficeListResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="OpenAPIFault">
+        <soap:fault name="OpenAPIFault" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchDailyBoxOfficeList">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="searchDailyBoxOfficeList">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="searchDailyBoxOfficeListResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+      <wsdl:fault name="OpenAPIFault">
+        <soap:fault name="OpenAPIFault" use="literal"></soap:fault>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BoxOfficeAPIServiceImplService">
+    <wsdl:port binding="tns:BoxOfficeAPIServiceImplServiceSoapBinding" name="BoxOfficeAPIServiceImplPort">
+      <soap:address location="http://www.kobis.or.kr:80/kobisopenapi/webservice/soap/boxoffice"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
